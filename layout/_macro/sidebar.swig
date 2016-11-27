@@ -8,29 +8,7 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
-
-      {% set display_toc = is_post and theme.toc.enable %}
-
-      {% if display_toc %}
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            {{ __('sidebar.toc') }}
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            {{ __('sidebar.overview') }}
-          </li>
-        </ul>
-      {% endif %}
-
-      <section class="site-overview sidebar-panel {% if not display_toc %} sidebar-panel-active {% endif %}">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="{{ url_for( theme.avatar | default(theme.images + '/avatar.gif') ) }}"
-               alt="{{ theme.author }}" />
-          <p class="site-author-name" itemprop="name">{{ theme.author }}</p>
-          <p class="site-description motion-element" itemprop="description">{{ theme.description }}</p>
-        </div>
+  <div style="background-color:black;margin-top:50px">
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="{{ url_for(theme.menu.archives) }}">
@@ -56,8 +34,53 @@
               {% if theme.menu.tags %}</a>{% endif %}
             </div>
           {% endif %}
-
         </nav>
+          </div>
+
+    <div class="sidebar-inner">
+
+      {% set display_toc = is_post and theme.toc.enable %}
+
+      {% if display_toc %}
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            {{ __('sidebar.toc') }}
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            {{ __('sidebar.overview') }}
+          </li>
+        </ul>
+      {% endif %}
+
+      <section class="site-overview sidebar-panel {% if not display_toc %} sidebar-panel-active {% endif %}">
+      <link rel="stylesheet" type="text/css" href="../lib/style/zns_style.css" />
+      <script type="text/javascript" src="../lib/js/zns_3dsc.js"></script>
+      <div id="div1">
+      <a href="#" class="black">深度学习</a>
+      <a href="#" class="black">机器学习</a>
+      <a href="#" class="black">人工智能</a>
+      <a href="#" class="black">环境搭建</a>
+      <a href="#" class="black">语言学习</a>
+      <a href="#" class="black">环境搭建</a>
+      <a href="#" class="black">卷积神经网络</a>
+        <a href="#" class="black">leetcode</a>
+      <a href="#" class="black">图像分类</a>
+        <a href="#" class="black">行人检测</a>
+</div>
+
+
+<div id="site_search_a">
+  <input type="text" id="local-search-input" name="q" results="0" placeholder="搜索我的博客.." class="form-control"/>
+  <div id="local-search-result"></div>
+  </div>
+
+
+
+  {% include '../_scripts/third-party/localsearch.swig' %}
+
+
+
+
 
         {% if theme.rss %}
           <div class="feed-link motion-element">
@@ -68,20 +91,12 @@
           </div>
         {% endif %}
 
-        <div class="links-of-author motion-element">
-          {% if theme.social %}
-            {% for name, link in theme.social %}
-              <span class="links-of-author-item">
-                <a href="{{ link }}" target="_blank" title="{{ name }}">
-                  {% if theme.social_icons.enable %}
-                    <i class="fa fa-fw fa-{{ theme.social_icons[name] | default('globe') | lower }}"></i>
-                  {% endif %}
-                  {{ name }}
-                </a>
-              </span>
-            {% endfor %}
-          {% endif %}
-        </div>
+
+
+
+
+
+
 
         {% set cc = {'by': 1, 'by-nc': 1, 'by-nc-nd': 1, 'by-nc-sa': 1, 'by-nd': 1, 'by-sa': 1, 'zero': 1} %}
         {% if theme.creative_commons in cc %}
@@ -127,6 +142,7 @@
           </div>
         </section>
       {% endif %}
+      <script type="text/javascript" src="//rc.revolvermaps.com/0/0/8.js?i=2zfmnth7mnb&amp;m=7&amp;s=170&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=17" async="async"></script>
 
     </div>
   </aside>
