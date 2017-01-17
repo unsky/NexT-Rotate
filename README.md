@@ -1,6 +1,7 @@
 # NexT-Rotate
 一款轻量级静态博客生成程序-基于hexo-NexT二次开发
-
+示例博客： www.deepdim.com
+安装教程： http://theme-next.iissnan.com/
 NexT-Rotate v1.0
 
 1.  基于hexo-NexT的静态博客生成程序,更快,更稳定.
